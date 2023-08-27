@@ -85,7 +85,7 @@ syzygy:
   enabled: true                           # Activate local syzygy endgame tablebases.
   paths:                                  # Paths to local syzygy endgame tablebases.
     - "C:/chess/Syzygy345"                # Main Path
-  max_pieces: 6                           # Count of max pieces in the local syzygy endgame tablebases.
+  max_pieces: 5                           # Count of max pieces in the local syzygy endgame tablebases.
   instant_play: true                      # Whether the bot should play directly from syzygy without engine if possible.
 
 gaviota:
