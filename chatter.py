@@ -109,8 +109,14 @@ class Chatter:
         if command == 'ram':
             return self.ram_message
 
+        if command == 'gpu':
+            return f'MSI Gaming Trio RTX 3080'
+
+        if command in ['ping', 'lag']:
+            return f'150-250 ms average which is why I cant insta move :('
+
         if command in ['help', 'commands']:
-            return 'Supported commands: !cpu, !draw, !eval, !motor, !name, !printeval / !stopeval, !ram'
+            return 'Supported commands: !cpu, !draw, !eval, !motor, !name, !printeval / !stopeval, !ram, !gpu, !ping, !lag'
 
     def _get_cpu(self) -> str:
         cpu = ''
@@ -137,13 +143,13 @@ class Chatter:
         except FileNotFoundError:
             cpu_freq = float('NaN')
 
-        return f'{cpu} {cores}c/{threads}t @ {cpu_freq:.2f}GHz'
+        return f'AMD Ryzen 5950X 16 Core 32 Thread Desktop Processor @ 4.00 GHz'
 
     def _get_ram(self) -> str:
         mem_bytes = psutil.virtual_memory().total
         mem_gib = mem_bytes/(1024.**3)
 
-        return f'{mem_gib:.1f} GiB'
+        return f'32 GiB'
 
     def _get_draw_message(self, config: dict) -> str:
         draw_enabled = config['offer_draw']['enabled']
